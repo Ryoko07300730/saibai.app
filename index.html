@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栽培管理アプリ</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 栽培管理アプリ</h1>
+
+        <!-- 植物登録フォーム -->
+        <form action="/add" method="post">
+            <label>植物の名前:</label>
+            <input type="text" name="plant_name" required>
+            
+            <label>植えた日:</label>
+            <input type="date" name="plant_date" required>
+            
+            <label>メモ:</label>
+            <input type="text" name="plant_memo">
+
+            <button type="submit">登録</button>
+        </form>
+
+        <hr>
+
+        <!-- 登録された植物 -->
+        <h2>🌿 登録された植物</h2>
+        <ul>
+            {% for plant in plants %}
+                <li>
+                    <b>{{ plant[1] }}</b> （{{ plant[2] }}） - {{ plant[3] }}
+                    <form action="/delete/{{ plant[0] }}" method="post" style="display:inline;">
+                        <button type="submit">🗑️ 削除</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+

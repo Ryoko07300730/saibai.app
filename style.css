@@ -1,0 +1,73 @@
+/* 全体の背景色とフォント */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* 淡いブルー */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* タイトル */
+h1 {
+    color: #2c3e50;
+}
+
+/* フォームのデザイン */
+form {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* 入力欄 */
+input {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 登録ボタン */
+button {
+    background-color: #2ecc71; /* グリーン */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+/* 植物リスト */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 5px;
+    width: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 削除ボタン */
+form[action^="/delete"] button {
+    background-color: #e74c3c;
+}
+
+form[action^="/delete"] button:hover {
+    background-color: #c0392b;
+}
+
